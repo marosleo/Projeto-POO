@@ -38,25 +38,20 @@
         <input type="text" id="prioridade" placeholder="Prioridade">
       </div>
       
-      <button onclick="tarefa.adicionar()">Adicionar</button>
-      <button onclick="tarefa.excluir()">Excluir</button>
+      <button onclick="tarefa.save()">Salvar</button>
+      <button onclick="tarefa.cancel()">Cancelar</button>
     </div>
 
     <div class="content">
       <table border="1">
         <thead>
-          <th>ID</th>
-          <th>Tarefa</th>
-          <th>Prioridade</th>
-          <th>Ações</th>
+          <th id="id" class="center">ID</th>
+          <th id="task">Tarefa</th>
+          <th id="priority">Prioridade</th>
+          <th id="action" class="center">Ações</th>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Treinar</td>
-            <td>10 </td>
-            <td>10 </td>
-          </tr>
+        <tbody id="tbody">
+          
         </tbody>
       </table>
     </div>

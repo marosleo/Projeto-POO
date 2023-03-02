@@ -5,13 +5,13 @@
 body {
   font-family: 'Tilt Neon', cursive;
   background-color: #6A5ACD;
-  color: 1C1C1C;
+  color: black;
 }
 
 header {
   background: linear-gradient(180deg, #1C1C1C	0%, #6A5ACD 100%)	;
   padding: 20px;
-  color: #1c1c1c;
+  color: black;
   text-align: center;
 }
 
@@ -81,5 +81,34 @@ table {
 }
 
 table th {
-  background-color: #444444;
+  background-color: #1C1C1C;
+}
+
+table th, td {
+  padding: 1px 5px;  
+  text-align: left;
+}
+
+table td img{
+  width: 22px;
+}
+
+.center {
+  text-align: center ;
+}
+
+#id {
+  width: 50px;
+}
+
+#task {
+  width: 300px;
+}
+
+#priority {
+  width: 25px;
+}
+
+#action {
+  width: 50px;
 }
