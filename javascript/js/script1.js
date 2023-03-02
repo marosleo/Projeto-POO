@@ -89,13 +89,16 @@ class Tarefa {
 
   deletar(id){
 
-    let tbody = document.getElementById('tbody');
+    if(confirm('Deseja realmente deletar o produto do ID' + id)) {
+      let tbody = document.getElementById('tbody');
 
-    for(let i = 0; i < this.arrayTarefas.length; i++){
-       if(this.arrayTarefas[i].id == id) {
-        this.arrayTarefas.splice(i, 1);
-        tbody.deleteRow(i);
-       }
+      for(let i = 0; i < this.arrayTarefas.length; i++){
+         if(this.arrayTarefas[i].id == id) {
+          this.arrayTarefas.splice(i, 1);
+          tbody.deleteRow(i);
+         }
+    }
+
     }
   }
 }
