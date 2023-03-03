@@ -1,3 +1,4 @@
+/* Estilos padrão */
 * {
   margin: 0;
 }
@@ -9,14 +10,14 @@ body {
 }
 
 header {
-  background: linear-gradient(180deg, #1C1C1C	0%, #6A5ACD 100%)	;
+  background: linear-gradient(180deg, #1C1C1C	0%, #6A5ACD 100%);
   padding: 20px;
   color: black;
   text-align: center;
 }
 
 main {
-  padding: 30px 50px;  
+  padding: 30px 500px;
 }
 
 .card {
@@ -77,24 +78,25 @@ button:hover {
 table {
   border-collapse: collapse;
   border: 1px solid #1C1C1C;
-  width: 100% ;
+  width: 100%;
 }
 
 table th {
   background-color: #1C1C1C;
 }
 
-table th, td {
-  padding: 1px 5px;  
+table th,
+td {
+  padding: 1px 5px;
   text-align: left;
 }
 
-table td img{
+table td img {
   width: 22px;
 }
 
 .center {
-  text-align: center ;
+  text-align: center;
 }
 
 #id {
@@ -111,4 +113,52 @@ table td img{
 
 #action {
   width: 50px;
+}
+
+/* Estilos para telas menores que 768px */
+@media screen and (max-width: 768px) {
+  main {
+    padding: 30px;
+  }
+  
+  #tarefa {
+    width: 100%;
+  }
+  
+  #priority {
+    width: 50%;
+  }
+  
+  table th, td {
+    font-size: 12px;
+  }
+  
+  #task {
+    width: 200px;
+  }
+  
+  #id {
+    display: none;
+  }
+  
+  #priority {
+    display: none;
+  }
+  
+  #action {
+    width: 100px;
+  }
+  
+  button {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+/* Estilos para telas menores que 480px */
+@media screen and (max-width: 480px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

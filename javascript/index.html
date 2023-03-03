@@ -17,13 +17,13 @@
 <body>
 
   <header>
-    <h1>LISTA DE TAREFAS DOS GURI</h1>
+    <h1>LISTA DE TAREFAS</h1>
+    <p>Leonardo Maros</p>
   </header>
 
   <main>
     <div class="title">
-      <h2>Tarefas</h2>
-      <span>Lista de tarefas</span>
+      <h2>Adicionar tarefas</h2>
     </div>
 
     <div class="card">
@@ -35,10 +35,10 @@
 
       <div class="lineInput">
         <label>Prioridade:</label>
-        <input type="text" id="prioridade" placeholder="Prioridade">
+        <input type="text" id="prioridade" placeholder="De 0 a 10">
       </div>
       
-      <button onclick="tarefa.save()">Salvar</button>
+      <button onclick="tarefa.save()" id="btn1">Salvar</button>
       <button onclick="tarefa.cancel()">Cancelar</button>
     </div>
 

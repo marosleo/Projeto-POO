@@ -3,13 +3,18 @@ class Tarefa {
   constructor(){
     this.id = 1;
     this.arrayTarefas = [];
+    this.editId = null;
   }
 
   save() {
     let tarefa = this.lerDados()
 
     if(this.validaCampos(tarefa)) {
-      this.adicionar(tarefa)
+      if(this.editId == null){
+        this.adicionar(tarefa)
+      } else {
+         this.atualizar(this.editId, tarefa);
+      }
     }
 
     this.listaTabela();
@@ -36,6 +41,7 @@ class Tarefa {
 
       let imgEdit = document.createElement('img');
       imgEdit.src = '../img/edit.png';
+      imgEdit.setAttribute("onclick","tarefa.preparaEdicao(" + JSON.stringify(this.arrayTarefas[i]) + ")"); 
 
       let imgDelete = document.createElement('img');
       imgDelete.src =  '../img/delete.png';
@@ -49,8 +55,27 @@ class Tarefa {
   }
 
   adicionar(tarefa) {
+    tarefa.preco = parseFloat(tarefa.prioridade)
     this.arrayTarefas.push(tarefa);
     this.id++;
+  }
+
+  atualizar(id, tarefa) {
+    for (let i = 0; i < this.arrayTarefas.length; i++) {
+      if(this.arrayTarefas[i].id == id) {
+        this.arrayTarefas[i].nomeTarefa = tarefa.nomeTarefa
+        this.arrayTarefas[i].prioridade = tarefa.prioridade
+      }      
+    }
+  }
+
+  preparaEdicao(dados) {
+    this.editId = dados.id;
+
+    document.getElementById('tarefa').value = dados.nomeTarefa
+    document.getElementById('prioridade').value = dados.prioridade
+
+    document.getElementById('btn1').innerText = 'Atualizar'
   }
 
   lerDados() {
@@ -85,11 +110,14 @@ class Tarefa {
   cancel() {
     document.getElementById('tarefa').value = '';
     document.getElementById('prioridade').value = '';
+
+    document.getElementById('btn1').innerText = 'Salvar';
+    this.editId = null;
   }
 
   deletar(id){
 
-    if(confirm('Deseja realmente deletar o produto do ID' + id)) {
+    if(confirm('Deseja realmente deletar a tarefa do ID' + id)) {
       let tbody = document.getElementById('tbody');
 
       for(let i = 0; i < this.arrayTarefas.length; i++){
